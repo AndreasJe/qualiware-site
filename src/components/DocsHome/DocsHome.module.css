@@ -1,0 +1,103 @@
+.section {
+  background: var(--qw-white);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 34px;
+}
+
+@media (min-width: 900px) {
+  .split {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+}
+
+.treeColumn {
+  min-width: 0;
+}
+
+.treeHeading {
+  color: var(--qw-green);
+}
+
+.treeLead {
+  margin-top: 10px;
+  margin-bottom: 22px;
+  font-size: var(--qw-small);
+  color: var(--qw-meta);
+}
+
+.railColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+
+.iceCard,
+.card {
+  padding: 24px;
+}
+
+.iceCard {
+  background: var(--qw-ice);
+}
+
+.card {
+  border: 1px solid var(--qw-border);
+  background: var(--qw-white);
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--qw-green);
+}
+
+.cardEyebrow,
+.cardEyebrowGreen {
+  color: var(--qw-green);
+}
+
+.cardTitle {
+  color: var(--qw-green);
+  margin-top: 8px;
+}
+
+.cardText {
+  margin-top: 10px;
+  font-size: var(--qw-small);
+  line-height: 1.65;
+  color: var(--qw-on-ice);
+}
+
+.card .cardText {
+  color: var(--qw-body);
+}
+
+.numbered {
+  margin-top: 14px;
+  padding-left: 20px;
+  list-style: decimal;
+  font-size: var(--qw-small);
+  line-height: 1.6;
+  color: var(--qw-body);
+}
+
+.numbered li + li {
+  margin-top: 8px;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--qw-green);
+}

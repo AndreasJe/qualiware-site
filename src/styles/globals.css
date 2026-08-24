@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ==========================================================================
+   QualiWare design tokens — from the brand guide (qualiware.com/qw-designguide)
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --qw-green: #2b675b;
+  --qw-green-pressed: #1d4a41;
+  --qw-green-deep: #12332c;
+  --qw-ice: #d2e9e3;
+  --qw-navy: #2e4163;
+  --qw-neon: #00ff00;
+  --qw-grey: #988f8f;
+  --qw-red: #b1263d;
+
+  /* Neutrals */
+  --qw-heading: #26332f;
+  --qw-article: #334a44;
+  --qw-on-ice: #37544c;
+  --qw-body: #46564f;
+  --qw-meta: #7d8f8a;
+  --qw-meta-2: #8b9994;
+  --qw-border: #e4ece9;
+  --qw-divider: #eaf0ee;
+  --qw-tint: #f4f8f6;
+  --qw-ground: #f7faf9;
+  --qw-slot: #eef1f0;
+  --qw-slot-border: #c3cec9;
+  --qw-white: #ffffff;
+
+  /* Wider brand palette — illustration and data-viz accents only */
+  --qw-cobalt: #2937f1;
+  --qw-mustard: #d39b40;
+  --qw-pink: #e69294;
+  --qw-bronze: #bc824d;
+  --qw-mocca: #998675;
+
+  /* Layout */
+  --qw-gutter: 18px;
+  --qw-section: 30px;
+  --qw-max: 1440px;
+
+  /* Type scale — mobile-first, scaling up via the breakpoint below */
+  --qw-h1-hero: 36px;
+  --qw-h1-hero-lh: 1.08;
+  --qw-h1-hero-ls: -0.9px;
+  --qw-h1: 31px;
+  --qw-h1-lh: 1.1;
+  --qw-h1-ls: -0.7px;
+  --qw-h2: 27px;
+  --qw-h2-lh: 1.12;
+  --qw-h2-ls: -0.5px;
+  --qw-h3: 18px;
+  --qw-h3-lh: 1.3;
+  --qw-h4: 16px;
+  --qw-h5: 15px;
+  --qw-h6: 14px;
+  --qw-eyebrow: 11px;
+  --qw-eyebrow-ls: 1.3px;
+  --qw-lead: 16px;
+  --qw-lead-lh: 1.6;
+  --qw-body-size: 15px;
+  --qw-body-lh: 1.6;
+  --qw-small: 13px;
+  --qw-nav: 15px;
+  --qw-button: 15px;
+
+  /* Motion */
+  --qw-shadow-menu: 0 22px 40px rgba(20, 45, 40, 0.13);
+}
+
+@media (min-width: 900px) {
+  :root {
+    --qw-gutter: 44px;
+    --qw-section: 68px;
+
+    --qw-h1-hero: 62px;
+    --qw-h1-hero-lh: 1.05;
+    --qw-h1-hero-ls: -1.4px;
+    --qw-h1: 48px;
+    --qw-h1-lh: 1.07;
+    --qw-h1-ls: -1.15px;
+    --qw-h2: 38px;
+    --qw-h2-lh: 1.12;
+    --qw-h2-ls: -0.8px;
+    --qw-h3: 22px;
+    --qw-h3-lh: 1.27;
+    --qw-h4: 19px;
+    --qw-h5: 17px;
+    --qw-h6: 15px;
+    --qw-eyebrow: 12.5px;
+    --qw-eyebrow-ls: 1.4px;
+    --qw-lead: 19.5px;
+    --qw-lead-lh: 1.62;
+    --qw-body-size: 17px;
+    --qw-body-lh: 1.75;
+    --qw-small: 14px;
+    --qw-nav: 14px;
+    --qw-button: 15px;
+  }
+}
+
+/* ==========================================================================
+   Reset & base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'PT Sans', 'Calibri Light', sans-serif;
+  font-size: var(--qw-body-size);
+  line-height: var(--qw-body-lh);
+  color: var(--qw-body);
+  background: var(--qw-white);
+}
+
+/* Corners are square everywhere. Radius exists only on buttons (2px)
+   and status dots (50%). */
+img,
+picture,
+video,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--qw-heading);
+  text-wrap: pretty;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--qw-green);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Typography primitives
+   ========================================================================== */
+
+.qw-h1-hero {
+  font-size: var(--qw-h1-hero);
+  line-height: var(--qw-h1-hero-lh);
+  letter-spacing: var(--qw-h1-hero-ls);
+  font-weight: 700;
+}
+
+.qw-h1 {
+  font-size: var(--qw-h1);
+  line-height: var(--qw-h1-lh);
+  letter-spacing: var(--qw-h1-ls);
+  font-weight: 700;
+}
+
+.qw-h2 {
+  font-size: var(--qw-h2);
+  line-height: var(--qw-h2-lh);
+  letter-spacing: var(--qw-h2-ls);
+  font-weight: 700;
+}
+
+.qw-h3 {
+  font-size: var(--qw-h3);
+  line-height: var(--qw-h3-lh);
+  font-weight: 700;
+}
+
+.qw-eyebrow {
+  font-size: var(--qw-eyebrow);
+  font-weight: 700;
+  letter-spacing: var(--qw-eyebrow-ls);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.qw-lead {
+  font-size: var(--qw-lead);
+  line-height: var(--qw-lead-lh);
+  text-wrap: pretty;
+}
+
+.qw-small {
+  font-size: var(--qw-small);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Layout primitives
+   ========================================================================== */
+
+.qw-shell {
+  max-width: var(--qw-max);
+  margin: 0 auto;
+}
+
+.qw-section {
+  padding: var(--qw-section) var(--qw-gutter);
+}
+
+.qw-grid {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 900px) {
+  .qw-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .qw-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .qw-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Buttons — the only 2px radius in the system
+   ========================================================================== */
+
+.qw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 13px 22px;
+  border-radius: 2px;
+  font-size: var(--qw-button);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.qw-btn--neon {
+  background: var(--qw-neon);
+  color: var(--qw-green-deep);
+}
+
+.qw-btn--neon:hover {
+  background: #00e600;
+}
+
+.qw-btn--solid {
+  background: var(--qw-green);
+  color: var(--qw-white);
+}
+
+.qw-btn--solid:hover {
+  background: var(--qw-green-pressed);
+}
+
+.qw-btn--outline {
+  border: 1px solid currentColor;
+  color: var(--qw-white);
+}
+
+.qw-btn--outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.qw-btn--outline-green {
+  border: 1px solid var(--qw-green);
+  color: var(--qw-green);
+}
+
+.qw-btn--outline-green:hover {
+  background: var(--qw-ice);
+}
+
+.qw-btn--full {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Cards — hover changes border colour only, no lift or shadow
+   ========================================================================== */
+
+.qw-card {
+  border: 1px solid var(--qw-border);
+  background: var(--qw-white);
+  padding: 24px;
+  transition: border-color 0.15s ease;
+}
+
+.qw-card:hover {
+  border-color: var(--qw-green);
+}
+
+.qw-card--feature {
+  border-top: 3px solid var(--qw-green);
+}
+
+/* Arrow-bulleted list used in value blocks */
+.qw-arrow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.qw-arrow-list li {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.qw-arrow-list svg {
+  margin-top: 0.55em;
+}
+
+/* Image placeholder slot */
+.qw-slot {
+  background: var(--qw-slot);
+  border: 1px dashed var(--qw-slot-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--qw-meta);
+  min-height: 160px;
+}
+
+.qw-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Visually hidden but available to assistive tech */
+.qw-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Animations — all decorative, all respecting prefers-reduced-motion
+   ========================================================================== */
+
+@keyframes qw-drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(14px, -14px);
+  }
+}
+
+@keyframes qw-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    r: 2.5;
+  }
+  50% {
+    opacity: 1;
+    r: 4;
+  }
+}
+
+@keyframes qw-trace {
+  from {
+    stroke-dashoffset: 420;
+  }
+  to {
+    stroke-dashoffset: -420;
+  }
+}
+
+@keyframes qw-sweep {
+  0%,
+  100% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(320%);
+  }
+}
+
+@keyframes qw-bar-fill {
+  from {
+    transform: scaleX(0.15);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes qw-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(9px);
+  }
+}
+
+.qw-anim-drift {
+  animation: qw-drift 21s ease-in-out infinite;
+}
+
+.qw-anim-trace {
+  stroke-dasharray: 420;
+  animation: qw-trace 9s linear infinite;
+}
+
+.qw-anim-sweep {
+  animation: qw-sweep 4.8s ease-in-out infinite;
+}
+
+.qw-anim-bar {
+  transform-origin: left;
+  animation: qw-bar-fill 2.2s ease-out 1 both;
+}
+
+.qw-anim-bob {
+  animation: qw-bob 2.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+  }
+}

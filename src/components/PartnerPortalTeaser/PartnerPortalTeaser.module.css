@@ -1,0 +1,100 @@
+/* Locked Partner Portal teaser — ice-blue ground, reads as not-yet-available. */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--qw-ice);
+  padding: 24px;
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  color: var(--qw-green);
+}
+
+.lockedTag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--qw-on-ice);
+  border: 1px solid var(--qw-green);
+  padding: 3px 7px;
+}
+
+.heading {
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--qw-green);
+  margin-top: 14px;
+}
+
+.body {
+  font-size: var(--qw-small);
+  line-height: 1.65;
+  color: var(--qw-on-ice);
+  margin-top: 12px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Disabled on purpose: the gated phase is not built. */
+.signIn {
+  justify-content: space-between;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.signIn:hover {
+  background: var(--qw-green);
+}
+
+.note {
+  color: var(--qw-on-ice);
+}
+
+.requestLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: var(--qw-small);
+  font-weight: 700;
+  color: var(--qw-green);
+  transition: color 0.15s ease;
+}
+
+.requestLink:hover {
+  color: var(--qw-green-pressed);
+}
+
+@media (min-width: 900px) {
+  .panel {
+    padding: 30px;
+  }
+
+  .heading {
+    font-size: 26px;
+  }
+
+  .body {
+    font-size: 15px;
+  }
+
+  .requestLink {
+    min-height: 0;
+    font-size: 14px;
+  }
+}

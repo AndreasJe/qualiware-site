@@ -1,0 +1,68 @@
+# ---------------------------------------------------------------------------
+# Secrets — never commit
+# ---------------------------------------------------------------------------
+# Holds PAYLOAD_SECRET, the database URI, SMTP credentials and the Zoho Desk
+# client secret and refresh token. `.env.example` is the committed template.
+.env
+.env.*
+!.env.example
+
+# Certificates and keys, wherever they land
+*.pem
+*.key
+*.p12
+*.pfx
+*.cert
+*.crt
+
+# ---------------------------------------------------------------------------
+# Data — environment-specific, and contains real people once live
+# ---------------------------------------------------------------------------
+# The SQLite database carries account records and password hashes. Production
+# uses Postgres, which lives outside the repo entirely.
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Database dumps, from a backup or a migration
+*.sql
+*.dump
+
+# Uploaded media. Reproduce from a backup, not from git — GitHub rejects any
+# file over 100MB and binaries bloat history permanently.
+/media
+/public/media
+
+# ---------------------------------------------------------------------------
+# Build output and dependencies
+# ---------------------------------------------------------------------------
+node_modules
+.next
+/out
+/build
+*.tsbuildinfo
+next-env.d.ts
+
+# Payload writes this at build time from the collection config
+/src/app/(payload)/admin/importMap.js
+
+# ---------------------------------------------------------------------------
+# Local noise
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-error.log*
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# ---------------------------------------------------------------------------
+# Deliberately NOT ignored
+# ---------------------------------------------------------------------------
+# src/seed/  — seed content is source, and reproduces the whole site
+# *.md       — the documentation is part of the deliverable

@@ -1,0 +1,50 @@
+/* "ON THIS PAGE" table of contents — artboard 1l right rail.
+   The rail is desktop-only, so the whole component is hidden below 900px. */
+
+.toc {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .toc {
+    display: block;
+    position: sticky;
+    top: 28px;
+  }
+}
+
+.eyebrow {
+  color: var(--qw-meta);
+}
+
+/* The 2px track the neon marker slides along. */
+.track {
+  --qw-toc-indent: 0px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  border-left: 2px solid var(--qw-border);
+}
+
+.link {
+  display: block;
+  padding: 7px 0 7px calc(14px + var(--qw-toc-indent));
+  margin-left: -2px;
+  border-left: 2px solid transparent;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--qw-body);
+  text-wrap: pretty;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--qw-green);
+}
+
+/* Neon marker — a 2px rule, well under the 5% accent budget. */
+.active {
+  border-left-color: var(--qw-neon);
+  color: var(--qw-green);
+  font-weight: 700;
+}

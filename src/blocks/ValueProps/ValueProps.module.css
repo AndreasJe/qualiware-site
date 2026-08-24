@@ -1,0 +1,142 @@
+.section {
+  padding: var(--qw-section) var(--qw-gutter);
+}
+
+.sectionSplit {
+  background: var(--qw-tint);
+}
+
+.sectionGrid {
+  background: var(--qw-white);
+}
+
+/* ---------- Shared head ---------- */
+
+.eyebrow {
+  color: var(--qw-green);
+}
+
+.heading {
+  margin: 12px 0 0;
+  color: var(--qw-green);
+}
+
+.lead {
+  margin: 16px 0 0;
+  color: var(--qw-body);
+}
+
+/* ---------- Editorial split ---------- */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+}
+
+/* Photo above the copy on mobile, left of it on desktop. */
+.photo {
+  position: relative;
+  min-height: 220px;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .photo {
+    min-height: 400px;
+  }
+}
+
+/* Two classes so this wins over the global `.qw-slot` min-height. */
+.photo .photoImage {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  .photo .photoImage {
+    min-height: 400px;
+  }
+}
+
+.copy {
+  min-width: 0;
+}
+
+.list {
+  margin-top: 22px;
+}
+
+@media (min-width: 900px) {
+  .list {
+    margin-top: 26px;
+  }
+}
+
+.listTitle {
+  display: block;
+  font-size: var(--qw-lead);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--qw-heading);
+  text-wrap: pretty;
+}
+
+.listText {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--qw-body-size);
+  line-height: var(--qw-body-lh);
+  color: var(--qw-body);
+  text-wrap: pretty;
+}
+
+/* ---------- Icon / value grid ---------- */
+
+.gridHead {
+  max-width: 720px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 18px;
+  margin-top: 26px;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 34px 26px;
+    margin-top: 44px;
+  }
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemTitle {
+  font-size: var(--qw-h3);
+  line-height: var(--qw-h3-lh);
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+.itemText {
+  font-size: var(--qw-body-size);
+  line-height: 1.6;
+  color: var(--qw-body);
+}

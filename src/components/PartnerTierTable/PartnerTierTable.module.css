@@ -1,0 +1,140 @@
+/* Program tier table — cards below 900px, a real table from 900px up. */
+
+.section {
+  background: var(--qw-white);
+}
+
+.heading {
+  color: var(--qw-green);
+  margin-bottom: 22px;
+}
+
+/* ---------- Table (desktop only) ---------- */
+
+.tableWrap {
+  display: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--qw-border);
+  table-layout: fixed;
+}
+
+.headCell {
+  background: var(--qw-tint);
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.headBenefit {
+  width: 30%;
+  padding: 18px 20px;
+  text-align: left;
+  font-size: 13px;
+  letter-spacing: 1.1px;
+  color: var(--qw-body);
+}
+
+.headTier {
+  padding: 18px 16px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--qw-green);
+}
+
+.headTierHighlighted {
+  background: var(--qw-green);
+  color: var(--qw-white);
+}
+
+.benefitCell {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--qw-heading);
+  border-top: 1px solid var(--qw-border);
+}
+
+.valueCell {
+  padding: 16px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--qw-body);
+  border-top: 1px solid var(--qw-border);
+}
+
+.valueCellHighlighted {
+  background: var(--qw-tint);
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+/* ---------- Cards (below 900px) ---------- */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  border: 1px solid var(--qw-border);
+}
+
+.cardHighlighted {
+  border-color: var(--qw-green);
+}
+
+.cardHead {
+  padding: 14px 18px;
+  background: var(--qw-tint);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+.cardHeadHighlighted {
+  background: var(--qw-green);
+  color: var(--qw-white);
+}
+
+.cardList {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 18px;
+  border-top: 1px solid var(--qw-divider);
+}
+
+.cardBenefit {
+  font-size: var(--qw-small);
+  color: var(--qw-body);
+}
+
+.cardValue {
+  margin: 0;
+  font-size: var(--qw-small);
+  font-weight: 700;
+  color: var(--qw-heading);
+  text-align: right;
+}
+
+@media (min-width: 900px) {
+  .tableWrap {
+    display: block;
+  }
+
+  .cards {
+    display: none;
+  }
+}

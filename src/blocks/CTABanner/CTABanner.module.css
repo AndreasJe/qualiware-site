@@ -1,0 +1,83 @@
+/* ==========================================================================
+   CTA banner — the pre-footer band in 1a / 1b, reused across the site.
+   ========================================================================== */
+
+.root {
+  position: relative;
+  overflow: hidden;
+}
+
+.iceBlue {
+  background: var(--qw-ice);
+}
+
+.darkGreen {
+  background: var(--qw-green);
+}
+
+.tinted {
+  background: var(--qw-tint);
+}
+
+.inner {
+  position: relative;
+  max-width: var(--qw-max);
+  margin: 0 auto;
+  padding: 36px var(--qw-gutter);
+}
+
+@media (min-width: 900px) {
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 70px var(--qw-gutter);
+  }
+}
+
+.copy {
+  max-width: 640px;
+}
+
+.heading {
+  margin: 0;
+  color: var(--qw-green);
+}
+
+.darkGreen .heading {
+  color: var(--qw-white);
+}
+
+.text {
+  margin-top: 14px;
+  color: var(--qw-on-ice);
+}
+
+.darkGreen .text {
+  color: var(--qw-ice);
+}
+
+@media (min-width: 900px) {
+  .text {
+    margin-top: 18px;
+    max-width: 600px;
+  }
+}
+
+.cta {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 22px;
+}
+
+@media (min-width: 900px) {
+  .cta {
+    width: auto;
+    flex-shrink: 0;
+    justify-content: center;
+    margin-top: 0;
+    padding: 20px 30px;
+    white-space: nowrap;
+  }
+}

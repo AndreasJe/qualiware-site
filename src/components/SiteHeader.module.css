@@ -1,0 +1,493 @@
+.header {
+  position: relative;
+  z-index: 40;
+  background: var(--qw-white);
+}
+
+/* Desktop / mobile switch at the 900px breakpoint used across the system. */
+.desktop {
+  display: none;
+}
+
+.mobile {
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .desktop {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+}
+
+/* ---------- Utility row ---------- */
+
+.utilityRow {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  height: 38px;
+  padding: 0 var(--qw-gutter);
+  background: var(--qw-tint);
+  border-bottom: 1px solid var(--qw-border);
+}
+
+.tagline {
+  margin-right: auto;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  color: var(--qw-meta);
+}
+
+.utilityLink {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  color: var(--qw-body);
+  transition: color 0.15s ease;
+}
+
+.utilityLink:hover {
+  color: var(--qw-green);
+}
+
+/* ---------- Primary bar ---------- */
+
+.primaryBar {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  height: 74px;
+  padding: 0 var(--qw-gutter);
+  border-bottom: 1px solid var(--qw-border);
+}
+
+.wordmark {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  color: var(--qw-green);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 26px 0;
+  font-size: var(--qw-nav);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--qw-heading);
+  transition: color 0.15s ease;
+}
+
+.navItem:hover,
+.navItem[aria-expanded='true'] {
+  color: var(--qw-green);
+}
+
+.primaryActions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.demoButton {
+  white-space: nowrap;
+}
+
+/* ---------- Mega-menu panel ---------- */
+
+.panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: var(--qw-white);
+  border-top: 1px solid var(--qw-border);
+  /* The one shadow in the system. */
+  box-shadow: var(--qw-shadow-menu);
+  padding: 42px var(--qw-gutter) 38px;
+}
+
+.panelInner {
+  display: grid;
+  gap: 40px;
+  max-width: var(--qw-max);
+  margin: 0 auto;
+}
+
+.panelInner[data-columns='4'] {
+  grid-template-columns: repeat(4, 1fr) 300px;
+}
+
+.panelInner[data-columns='3'] {
+  grid-template-columns: 1.25fr 1fr 300px;
+  gap: 48px;
+}
+
+.panelInner[data-columns='2'] {
+  grid-template-columns: auto auto 300px;
+  gap: 64px;
+  justify-content: start;
+}
+
+.panelColumn {
+  min-width: 0;
+}
+
+.groupTitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--qw-green);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--qw-ice);
+  margin-bottom: 16px;
+}
+
+.plainLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.describedLinks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.panelLink,
+.crossPropertyLink {
+  font-size: 15px;
+  color: var(--qw-heading);
+  transition: color 0.15s ease;
+}
+
+.crossPropertyLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--qw-body);
+}
+
+.panelLink:hover,
+.crossPropertyLink:hover,
+.describedLink:hover .describedLabel {
+  color: var(--qw-green-pressed);
+}
+
+.describedLink {
+  display: block;
+}
+
+.describedLabel {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+.describedText {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--qw-meta);
+  margin-top: 3px;
+}
+
+/* ---------- Promo panel ---------- */
+
+.promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 24px;
+}
+
+.promo[data-bg='tint'] {
+  background: var(--qw-tint);
+}
+
+.promo[data-bg='ice'] {
+  background: var(--qw-ice);
+}
+
+.promoEyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--qw-green);
+}
+
+.promoHeading {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--qw-green);
+  margin-top: 10px;
+}
+
+.promoText {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--qw-on-ice);
+  margin-top: 8px;
+}
+
+.promoLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+/* ---------- Mobile bar ---------- */
+
+.mobileBar {
+  display: flex;
+  align-items: center;
+  height: 58px;
+  padding: 0 var(--qw-gutter);
+  gap: 12px;
+  border-bottom: 1px solid var(--qw-border);
+}
+
+.mobileWordmark {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--qw-green);
+}
+
+.mobileActions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobileDemo {
+  background: var(--qw-green);
+  color: var(--qw-white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 11px 14px;
+  border-radius: 2px;
+}
+
+.burger {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.burger span {
+  width: 22px;
+  height: 2px;
+  background: var(--qw-green);
+}
+
+/* ---------- Mobile accordion overlay ---------- */
+
+.mobilePanel {
+  position: fixed;
+  top: 58px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background: var(--qw-white);
+  padding-bottom: 24px;
+  z-index: 50;
+}
+
+.mobileSearch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px var(--qw-gutter);
+  background: var(--qw-tint);
+}
+
+.mobileSearchInput {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  color: var(--qw-heading);
+  min-height: 20px;
+}
+
+.mobileSearchInput::placeholder {
+  color: var(--qw-meta);
+}
+
+.accordionRow {
+  border-bottom: 1px solid var(--qw-divider);
+}
+
+.accordionTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  padding: 17px var(--qw-gutter);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--qw-heading);
+  text-align: left;
+}
+
+.accordionSign {
+  font-size: 20px;
+  line-height: 1;
+  color: var(--qw-green);
+}
+
+.accordionBody {
+  background: var(--qw-tint);
+  padding: 6px 0 12px;
+}
+
+.accordionGroup {
+  padding: 12px var(--qw-gutter) 4px;
+}
+
+.accordionGroupTitle {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  color: var(--qw-green);
+  margin-bottom: 8px;
+}
+
+.accordionLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 9px 0;
+  font-size: 15px;
+  color: var(--qw-on-ice);
+}
+
+.mobileUtility {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 16px var(--qw-gutter);
+  background: var(--qw-tint);
+  border-bottom: 1px solid var(--qw-divider);
+}
+
+.mobileUtilityLink {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  color: var(--qw-body);
+}
+
+.mobileCta {
+  padding: 18px var(--qw-gutter) 0;
+}
+
+/* ---------- Property sub-bar ---------- */
+
+.subBar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  min-height: 52px;
+  padding: 0 var(--qw-gutter);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.subBar::-webkit-scrollbar {
+  display: none;
+}
+
+.subBarLabel {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--qw-white);
+  white-space: nowrap;
+}
+
+.subBarNav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.subBarLink {
+  font-size: 14px;
+  color: var(--qw-ice);
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.subBarLink:hover {
+  color: var(--qw-white);
+}
+
+.subBarDomain {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--qw-ice);
+  white-space: nowrap;
+}
+
+@media (max-width: 899px) {
+  .subBarDomain {
+    display: none;
+  }
+}
+
+/* Cross-property hand-off under a mega-menu column — a note, not a menu item. */
+.groupNote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--qw-border);
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--qw-meta);
+  transition: color 0.15s ease;
+}
+
+.groupNote:hover {
+  color: var(--qw-green);
+}

@@ -1,0 +1,186 @@
+/* Docs category tree — 1k (home) and 1l (article sidebar).
+   Mobile-first; 900px is the only breakpoint. Square corners throughout. */
+
+.nav {
+  --qw-nav-indent: 0px;
+  width: 100%;
+}
+
+.rootList,
+.childList {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  padding-inline-start: var(--qw-nav-indent);
+}
+
+/* --- shared row anatomy ------------------------------------------------- */
+
+.row,
+.leaf {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  text-align: left;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+  text-wrap: pretty;
+}
+
+.count {
+  margin-inline-start: auto;
+  flex-shrink: 0;
+  color: var(--qw-meta-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  flex-shrink: 0;
+}
+
+.more {
+  display: block;
+  color: var(--qw-meta-2);
+  font-size: var(--qw-small);
+  min-height: 44px;
+  text-align: left;
+}
+
+.more:hover {
+  color: var(--qw-green);
+}
+
+/* --- home variant ------------------------------------------------------- */
+/* Bordered panel, larger rows, open children on the UI ground. */
+
+.home {
+  border: 1px solid var(--qw-border);
+}
+
+.home .rootList > .item {
+  border-bottom: 1px solid var(--qw-divider);
+}
+
+.home .rootList > .item:last-child {
+  border-bottom: 0;
+}
+
+.home .row {
+  padding: 13px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--qw-heading);
+}
+
+.home .row:hover {
+  background: var(--qw-ground);
+}
+
+.home .rowActive {
+  background: var(--qw-ground);
+  color: var(--qw-green);
+}
+
+.home .count {
+  font-size: var(--qw-small);
+  font-weight: 400;
+}
+
+.home .children {
+  background: var(--qw-ground);
+  padding: 4px 18px 14px;
+}
+
+.home .leaf {
+  padding: 8px 0;
+  font-size: 15px;
+  color: var(--qw-on-ice);
+}
+
+.home .leaf:hover {
+  color: var(--qw-green);
+}
+
+.home .leafActive {
+  color: var(--qw-green);
+  font-weight: 700;
+}
+
+.home .more {
+  padding: 6px 0 0 28px;
+}
+
+/* --- sidebar variant ---------------------------------------------------- */
+/* Compact rows for the 300px article rail, sitting on the UI ground. */
+
+.sidebar {
+  background: var(--qw-ground);
+}
+
+.sidebar .row {
+  padding: 10px 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--qw-heading);
+}
+
+.sidebar .row:hover {
+  color: var(--qw-green);
+}
+
+.sidebar .rowActive {
+  color: var(--qw-green);
+}
+
+.sidebar .count {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.sidebar .children {
+  padding-bottom: 6px;
+}
+
+.sidebar .leaf {
+  padding: 7px 4px;
+  font-size: 14px;
+  color: var(--qw-body);
+}
+
+.sidebar .leaf:hover {
+  color: var(--qw-green);
+}
+
+.sidebar .leafActive {
+  color: var(--qw-green);
+  font-weight: 700;
+}
+
+.sidebar .more {
+  padding: 4px 4px 4px 26px;
+}
+
+/* Desktop can drop below the 44px mobile hit target for the compact rail. */
+@media (min-width: 900px) {
+  .sidebar .row,
+  .sidebar .leaf,
+  .sidebar .more {
+    min-height: 0;
+  }
+
+  .home .leaf {
+    min-height: 0;
+  }
+}

@@ -1,0 +1,95 @@
+/* Docs search — hero field (1k) and compact sidebar field (1l).
+   Square corners; the neon fill is the one accent on the hero. */
+
+.wrap {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  align-items: stretch;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  border: 0;
+  border-radius: 0;
+  background: var(--qw-white);
+  color: var(--qw-heading);
+}
+
+.input::placeholder {
+  color: var(--qw-meta);
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-height: 44px;
+  min-width: 44px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* --- hero --------------------------------------------------------------- */
+
+.hero .input {
+  font-size: 16px;
+  padding: 17px 18px;
+}
+
+.hero .submit {
+  background: var(--qw-neon);
+  padding: 17px 20px;
+}
+
+.hero .submit:hover {
+  background: #00e600;
+}
+
+.popular {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.popularLabel {
+  font-size: var(--qw-small);
+  color: var(--qw-ice);
+}
+
+.popularLink {
+  font-size: var(--qw-small);
+  color: var(--qw-white);
+  text-decoration: underline;
+}
+
+.popularLink:hover {
+  color: var(--qw-ice);
+}
+
+/* --- compact ------------------------------------------------------------ */
+
+.compact .form {
+  border: 1px solid var(--qw-border);
+  background: var(--qw-white);
+}
+
+.compact .input {
+  font-size: 13px;
+  padding: 11px 12px;
+}
+
+.compact .submit {
+  background: transparent;
+  padding: 0 12px;
+}
+
+.compact .submit:hover {
+  background: var(--qw-tint);
+}

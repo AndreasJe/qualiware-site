@@ -1,0 +1,96 @@
+/* Integrations marketplace — 1 card mobile, 2 from 560px, 4 from 900px. */
+
+.section {
+  background: var(--qw-white);
+}
+
+.heading {
+  color: var(--qw-green);
+  margin-bottom: 22px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.logo {
+  width: 100px;
+  height: 38px;
+  min-height: 0;
+  padding: 4px;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--qw-green);
+  margin-top: 14px;
+}
+
+.category {
+  color: var(--qw-meta);
+  margin-top: 6px;
+}
+
+.byline {
+  font-size: var(--qw-small);
+  color: var(--qw-meta);
+  margin-top: 4px;
+}
+
+.summary {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--qw-body);
+  margin-top: 8px;
+}
+
+/* Cross-property link: muted, the same treatment as the mega-menu's
+   "Developer documentation" row — how to authenticate lives in Docs. */
+.docsLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 14px;
+  color: var(--qw-body);
+  transition: color 0.15s ease;
+}
+
+.docsLink:hover {
+  color: var(--qw-green-pressed);
+}
+
+@media (min-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .docsLink {
+    min-height: 0;
+  }
+}

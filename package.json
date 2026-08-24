@@ -1,0 +1,44 @@
+{
+  "name": "qualiware-site",
+  "version": "1.0.0",
+  "description": "QualiWare marketing site — main, docs, partners",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "seed": "cross-env NODE_OPTIONS=--no-deprecation payload run src/seed/index.ts",
+    "zoho:link": "cross-env NODE_OPTIONS=--no-deprecation payload run src/scripts/link-zoho-contacts.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "^3.88.0",
+    "@payloadcms/db-sqlite": "^3.88.0",
+    "@payloadcms/email-nodemailer": "^3.88.0",
+    "@payloadcms/next": "^3.88.0",
+    "@payloadcms/plugin-multi-tenant": "^3.88.0",
+    "@payloadcms/plugin-nested-docs": "^3.88.0",
+    "@payloadcms/richtext-lexical": "^3.88.0",
+    "cross-env": "^10.1.0",
+    "graphql": "^16.14.2",
+    "next": "^16.3.2",
+    "payload": "^3.88.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "sharp": "^0.35.3"
+  },
+  "allowScripts": {
+    "sharp@0.35.3": true,
+    "esbuild@0.18.20": true,
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,156 @@
+.section {
+  background: var(--qw-navy);
+  padding: var(--qw-section) var(--qw-gutter);
+}
+
+.inner {
+  display: grid;
+  gap: 26px;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+/* ---------- Left column ---------- */
+
+.copy {
+  max-width: 620px;
+}
+
+.eyebrow {
+  color: var(--qw-neon);
+}
+
+.heading {
+  color: var(--qw-white);
+  margin: 12px 0 0;
+}
+
+.lead {
+  color: var(--qw-ice);
+  margin: 16px 0 0;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  min-height: 44px;
+  font-size: var(--qw-button);
+  font-weight: 700;
+  color: var(--qw-neon);
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Award cards ---------- */
+
+.cards {
+  display: grid;
+  gap: 10px;
+}
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid transparent;
+  padding: 16px;
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: rgba(210, 233, 227, 0.45);
+}
+
+@media (min-width: 900px) {
+  .card {
+    padding: 22px;
+  }
+}
+
+.cardTitle {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--qw-white);
+}
+
+@media (min-width: 900px) {
+  .cardTitle {
+    font-size: 34px;
+  }
+}
+
+.cardSubtitle {
+  margin-top: 6px;
+  font-size: var(--qw-small);
+  line-height: 1.5;
+  color: var(--qw-ice);
+}
+
+@media (min-width: 900px) {
+  .cardSubtitle {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+}
+
+.cardMeta {
+  margin-top: 10px;
+  font-size: var(--qw-small);
+  font-weight: 700;
+  color: var(--qw-neon);
+}
+
+/* ---------- Peer Insights card ---------- */
+
+.peerCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (min-width: 900px) {
+  .peerCard {
+    grid-column: span 2;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+.peerScoreGroup {
+  flex-shrink: 0;
+}
+
+.peerQuote {
+  margin: 0;
+  font-size: var(--qw-body-size);
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--qw-white);
+  text-wrap: pretty;
+}
+
+@media (min-width: 900px) {
+  .peerQuote {
+    margin-left: auto;
+    max-width: 330px;
+    font-size: 15px;
+  }
+}

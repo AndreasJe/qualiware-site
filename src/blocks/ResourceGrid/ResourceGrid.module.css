@@ -1,0 +1,297 @@
+/* Resources hub listing — artboard 1h.
+   Element-qualified selectors (h3.xTitle) are used where a global `.qw-*`
+   utility sets the same property, so the block wins regardless of
+   stylesheet order. */
+
+.section {
+  padding: var(--qw-section) var(--qw-gutter);
+  background: var(--qw-white);
+}
+
+.heading {
+  color: var(--qw-green);
+  margin: 0 0 20px;
+}
+
+/* ---------- Filter chips ---------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--qw-border);
+}
+
+@media (min-width: 900px) {
+  .chips {
+    padding-bottom: 24px;
+  }
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 1px solid var(--qw-border);
+  font-size: 14px;
+  color: var(--qw-body);
+  background: var(--qw-white);
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.chip:hover {
+  border-color: var(--qw-green);
+}
+
+.chipActive {
+  background: var(--qw-green);
+  border-color: var(--qw-green);
+  color: var(--qw-white);
+  font-weight: 700;
+}
+
+/* ---------- Shared card behaviour ---------- */
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--qw-meta);
+}
+
+.eyebrowIce {
+  color: var(--qw-green);
+}
+
+.summary {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--qw-body);
+}
+
+.meta {
+  margin-top: 10px;
+  font-size: var(--qw-small);
+  color: var(--qw-meta);
+}
+
+.arrowRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  min-height: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+.arrowRowIce {
+  color: var(--qw-green);
+}
+
+/* ---------- Featured row ---------- */
+
+.featureRow {
+  display: grid;
+  gap: 22px;
+  margin-top: 26px;
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .featureRow {
+    grid-template-columns: 1.35fr 1fr;
+    gap: 34px;
+    margin-top: 44px;
+  }
+}
+
+a.featuredCard,
+div.featuredCard {
+  padding: 0;
+}
+
+div.featuredImage,
+img.featuredImage {
+  width: 100%;
+  height: 200px;
+  min-height: 0;
+  border: 0;
+  border-bottom: 1px dashed var(--qw-slot-border);
+}
+
+@media (min-width: 900px) {
+  div.featuredImage,
+  img.featuredImage {
+    height: 300px;
+  }
+}
+
+.featuredBody {
+  padding: 22px;
+}
+
+@media (min-width: 900px) {
+  .featuredBody {
+    padding: 28px;
+  }
+}
+
+h3.featuredTitle {
+  margin-top: 12px;
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+  color: var(--qw-green);
+}
+
+@media (min-width: 900px) {
+  h3.featuredTitle {
+    font-size: 30px;
+    letter-spacing: -0.6px;
+  }
+}
+
+/* ---------- Stack beside the featured item ---------- */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+a.stackCard,
+div.stackCard {
+  padding: 22px;
+}
+
+@media (min-width: 900px) {
+  a.stackCard,
+  div.stackCard {
+    padding: 24px;
+  }
+}
+
+h3.stackTitle {
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--qw-green);
+}
+
+@media (min-width: 900px) {
+  h3.stackTitle {
+    font-size: 20px;
+  }
+}
+
+a.webinarCard,
+div.webinarCard {
+  background: var(--qw-ice);
+  border: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.webinarCard:hover {
+  border-color: var(--qw-green);
+}
+
+@media (min-width: 900px) {
+  a.webinarCard,
+  div.webinarCard {
+    padding: 26px;
+  }
+}
+
+.webinarCard h3.stackTitle {
+  font-size: 20px;
+}
+
+@media (min-width: 900px) {
+  .webinarCard h3.stackTitle {
+    font-size: 22px;
+  }
+}
+
+/* The webinar's date · time · duration line is the point of the card. */
+.webinarMeta {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--qw-on-ice);
+}
+
+.webinarCard .summary {
+  color: var(--qw-on-ice);
+}
+
+/* ---------- 3-up grid ---------- */
+
+.grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 40px;
+  }
+}
+
+a.gridCard,
+div.gridCard {
+  padding: 0;
+}
+
+div.gridImage,
+img.gridImage {
+  width: 100%;
+  height: 165px;
+  min-height: 0;
+  border: 0;
+  border-bottom: 1px dashed var(--qw-slot-border);
+}
+
+@media (min-width: 900px) {
+  div.gridImage,
+  img.gridImage {
+    height: 170px;
+  }
+}
+
+.gridBody {
+  padding: 20px;
+}
+
+@media (min-width: 900px) {
+  .gridBody {
+    padding: 22px;
+  }
+}
+
+h3.gridTitle {
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--qw-green);
+}
+
+@media (min-width: 900px) {
+  h3.gridTitle {
+    font-size: 19px;
+  }
+}

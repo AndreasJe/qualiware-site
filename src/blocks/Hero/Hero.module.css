@@ -1,0 +1,591 @@
+/* ==========================================================================
+   Hero — 1a / 1b (homepage), 1h (resources) and 1k (docs home)
+   Mobile-first; 900px is the only breakpoint.
+   ========================================================================== */
+
+.root {
+  position: relative;
+  overflow: hidden;
+}
+
+.darkGreen {
+  background: var(--qw-green);
+  color: var(--qw-white);
+}
+
+.iceBlue {
+  background: var(--qw-ice);
+  color: var(--qw-on-ice);
+}
+
+.navy {
+  background: var(--qw-navy);
+  color: var(--qw-white);
+}
+
+.inner {
+  position: relative;
+  max-width: var(--qw-max);
+  margin: 0 auto;
+  padding: 40px var(--qw-gutter) 34px;
+}
+
+@media (min-width: 900px) {
+  .inner {
+    padding: 86px var(--qw-gutter) 74px;
+  }
+
+  .innerSplit {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+    align-items: center;
+  }
+}
+
+.copy {
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .inner:not(.innerSplit) .copy {
+    max-width: 760px;
+  }
+}
+
+/* ---------- Eyebrow, heading, lead ---------- */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.darkGreen .eyebrow,
+.navy .eyebrow {
+  color: var(--qw-neon);
+}
+
+.iceBlue .eyebrow {
+  color: var(--qw-green);
+}
+
+@media (min-width: 900px) {
+  .eyebrow {
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+}
+
+.heading {
+  margin: 0;
+  color: inherit;
+}
+
+.lead {
+  margin-top: 18px;
+}
+
+.darkGreen .lead,
+.navy .lead {
+  color: var(--qw-ice);
+}
+
+.iceBlue .lead {
+  color: var(--qw-on-ice);
+}
+
+@media (min-width: 900px) {
+  .lead {
+    margin-top: 26px;
+    max-width: 560px;
+  }
+}
+
+/* ---------- CTAs ---------- */
+
+.ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.cta {
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media (min-width: 900px) {
+  .ctas {
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    margin-top: 38px;
+  }
+
+  .cta {
+    width: auto;
+    justify-content: center;
+    padding: 17px 26px;
+  }
+}
+
+/* ---------- Search (resources / docs heroes) ---------- */
+
+.search {
+  display: flex;
+  align-items: stretch;
+  margin-top: 22px;
+}
+
+@media (min-width: 900px) {
+  .search {
+    margin-top: 30px;
+    max-width: 560px;
+  }
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  padding: 15px 16px;
+  border: 0;
+  border-radius: 0;
+  background: var(--qw-white);
+  color: var(--qw-heading);
+  font: inherit;
+  font-size: var(--qw-lead);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.searchInput::placeholder {
+  color: var(--qw-meta);
+}
+
+.searchSubmit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 52px;
+  min-height: 48px;
+  padding: 15px 18px;
+  border-radius: 0;
+  background: var(--qw-neon);
+  transition: background-color 0.15s ease;
+}
+
+.searchSubmit:hover {
+  background: #00e600;
+}
+
+.popular {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: var(--qw-small);
+}
+
+.popularLabel {
+  color: var(--qw-ice);
+}
+
+.iceBlue .popularLabel {
+  color: var(--qw-on-ice);
+}
+
+.popularLink {
+  text-decoration: underline;
+  color: var(--qw-white);
+}
+
+.iceBlue .popularLink {
+  color: var(--qw-green);
+}
+
+.popularLink:hover {
+  text-decoration: none;
+}
+
+/* ---------- Constellation ---------- */
+
+.constellation {
+  position: absolute;
+  right: -60px;
+  top: 10px;
+  width: 340px;
+  height: 340px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (min-width: 900px) {
+  .constellation {
+    right: -30px;
+    top: -40px;
+    width: 820px;
+    height: 700px;
+    opacity: 0.55;
+  }
+}
+
+.links {
+  stroke: var(--qw-ice);
+  stroke-width: 0.8;
+  opacity: 0.75;
+}
+
+.nodes {
+  fill: var(--qw-white);
+}
+
+/* Local pulse keyframe: the global `qw-pulse` animates the `r` attribute, which
+   is not animatable everywhere. Scaling the circle about its own box is. */
+@keyframes heroNodePulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.72);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-name: heroNodePulse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5.6s;
+}
+
+.trace {
+  stroke: var(--qw-neon);
+  stroke-width: 1.6;
+}
+
+/* ---------- Scroll cue ---------- */
+
+.scrollCue {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+@media (min-width: 900px) {
+  .scrollCue {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    margin-top: 0;
+  }
+}
+
+/* ==========================================================================
+   Product panel
+
+   One instance in the DOM. At mobile widths it drops out of the hero copy flow
+   onto its own white band that bleeds to the viewport edges (the negative
+   margins exactly cancel `.inner`'s gutter padding). At 900px it becomes the
+   hero's right-hand grid column and the white band disappears.
+   ========================================================================== */
+
+.panelHolder {
+  position: relative;
+  margin: 34px calc(var(--qw-gutter) * -1) -34px;
+  padding: 14px var(--qw-gutter) 22px;
+  background: var(--qw-white);
+}
+
+@media (min-width: 900px) {
+  .panelHolder {
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+}
+
+.panel {
+  border: 1px solid var(--qw-border);
+  background: var(--qw-ground);
+  padding: 0;
+}
+
+@media (min-width: 900px) {
+  .panel {
+    border-color: rgba(210, 233, 227, 0.28);
+    background: rgba(255, 255, 255, 0.07);
+    padding: 16px;
+  }
+}
+
+.panelHead {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .panelHead {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+}
+
+.panelDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--qw-neon);
+}
+
+.panelHeadLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--qw-ice);
+}
+
+.mock {
+  position: relative;
+  overflow: hidden;
+  background: var(--qw-ground);
+  padding: 14px;
+}
+
+@media (min-width: 900px) {
+  .mock {
+    min-height: 330px;
+    padding: 18px;
+  }
+}
+
+.sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sweepBand {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 0, 0) 0%,
+    rgba(0, 255, 0, 0.16) 50%,
+    rgba(0, 255, 0, 0) 100%
+  );
+}
+
+@media (min-width: 900px) {
+  .sweepBand {
+    height: 70px;
+  }
+}
+
+.mockLabel {
+  position: relative;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--qw-meta);
+}
+
+@media (min-width: 900px) {
+  .mockLabel {
+    font-size: 11px;
+  }
+}
+
+.mockGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+
+@media (min-width: 900px) {
+  .mockGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+  }
+}
+
+.capability {
+  background: var(--qw-ice);
+  padding: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+.application {
+  background: var(--qw-slot);
+  padding: 9px;
+  font-size: 11px;
+  color: var(--qw-body);
+}
+
+.applicationFlagged {
+  border: 1.5px solid var(--qw-neon);
+}
+
+@media (min-width: 900px) {
+  .capability,
+  .application {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+/* ---------- Progress bars ---------- */
+
+.bars {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+@media (min-width: 900px) {
+  .bars {
+    margin-top: 16px;
+  }
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.barLabel {
+  width: 104px;
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--qw-body);
+}
+
+.barTrack {
+  flex: 1;
+  height: 8px;
+  background: var(--qw-slot);
+}
+
+.barFill {
+  display: block;
+  height: 8px;
+}
+
+.barFillGreen {
+  background: var(--qw-green);
+}
+
+.barFillNavy {
+  background: var(--qw-navy);
+}
+
+.barFillGrey {
+  background: var(--qw-grey);
+}
+
+.barValue {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.barValueGreen {
+  color: var(--qw-green);
+}
+
+.barValueNavy {
+  color: var(--qw-navy);
+}
+
+.barValueGrey {
+  color: var(--qw-meta);
+}
+
+.conclusion {
+  position: relative;
+  margin-top: 12px;
+  padding: 10px;
+  background: var(--qw-navy);
+  color: var(--qw-white);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+@media (min-width: 900px) {
+  .conclusion {
+    margin-top: 16px;
+    padding: 11px 12px;
+    font-size: 12px;
+  }
+}
+
+/* ==========================================================================
+   Proof band — ice blue, sibling section below the hero
+   ========================================================================== */
+
+.proof {
+  background: var(--qw-ice);
+}
+
+.proofInner {
+  max-width: var(--qw-max);
+  margin: 0 auto;
+  padding: 26px var(--qw-gutter);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+@media (min-width: 900px) {
+  .proofInner {
+    padding: 38px var(--qw-gutter);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+}
+
+.proofValue {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--qw-green);
+}
+
+@media (min-width: 900px) {
+  .proofValue {
+    font-size: 40px;
+  }
+}
+
+.proofLabel {
+  margin-top: 5px;
+  font-size: var(--qw-small);
+  color: var(--qw-on-ice);
+}
+
+@media (min-width: 900px) {
+  .proofLabel {
+    margin-top: 6px;
+  }
+}

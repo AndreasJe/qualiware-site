@@ -1,0 +1,359 @@
+/* Partner directory — mobile-first: search + FILTER drawer below 900px,
+   280px filter rail beside the results grid from 900px up. */
+
+.section {
+  background: var(--qw-white);
+}
+
+.layout {
+  display: block;
+}
+
+/* ---------- Filter rail (desktop only) ---------- */
+
+.rail {
+  display: none;
+}
+
+.railHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.railTitle {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--qw-green);
+}
+
+.resetLink {
+  padding: 0;
+  font-size: var(--qw-small);
+  color: var(--qw-meta);
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+.resetLink:hover {
+  color: var(--qw-green);
+}
+
+/* ---------- Chip groups (shared by rail and drawer) ---------- */
+
+.group + .group {
+  margin-top: 24px;
+}
+
+.groupTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--qw-heading);
+  margin-bottom: 10px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  min-height: 44px;
+  padding: 11px 13px;
+  font-size: var(--qw-small);
+  color: var(--qw-body);
+  border: 1px solid var(--qw-border);
+  background: var(--qw-white);
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.chip:hover {
+  border-color: var(--qw-green);
+}
+
+.chipActive {
+  background: var(--qw-green);
+  border-color: var(--qw-green);
+  color: var(--qw-white);
+}
+
+/* ---------- Mobile search bar ---------- */
+
+.mobileBar {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 12px;
+}
+
+.search {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 13px 14px;
+  font: inherit;
+  font-size: var(--qw-small);
+  color: var(--qw-body);
+  background: var(--qw-white);
+  border: 1px solid var(--qw-slot-border);
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 13px 15px;
+  background: var(--qw-green);
+  color: var(--qw-white);
+  font-size: var(--qw-small);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background-color 0.15s ease;
+}
+
+.filterButton:hover {
+  background: var(--qw-green-pressed);
+}
+
+/* ---------- Results ---------- */
+
+.results {
+  min-width: 0;
+}
+
+.countRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--qw-border);
+}
+
+.count {
+  font-size: var(--qw-small);
+  color: var(--qw-body);
+}
+
+.sorted {
+  font-size: var(--qw-small);
+  color: var(--qw-meta);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.logo {
+  width: 110px;
+  height: 38px;
+  min-height: 0;
+  padding: 4px;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.tierChip {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--qw-green);
+  background: var(--qw-ice);
+  padding: 5px 9px;
+  white-space: nowrap;
+}
+
+.cardName {
+  color: var(--qw-green);
+  margin-top: 14px;
+}
+
+.cardMeta {
+  font-size: var(--qw-small);
+  color: var(--qw-meta);
+  margin-top: 4px;
+}
+
+.cardBlurb {
+  font-size: var(--qw-small);
+  line-height: 1.6;
+  color: var(--qw-body);
+  margin-top: 12px;
+}
+
+.profileLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: var(--qw-small);
+  font-weight: 700;
+  color: var(--qw-green);
+  transition: color 0.15s ease;
+}
+
+.profileLink:hover {
+  color: var(--qw-green-pressed);
+}
+
+.empty {
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--qw-tint);
+}
+
+.emptyTitle {
+  font-size: var(--qw-body-size);
+  font-weight: 700;
+  color: var(--qw-green);
+  margin-bottom: 8px;
+}
+
+/* ---------- Drawer (below 900px only) ---------- */
+
+.drawerRoot {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.drawerBackdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 51, 44, 0.45);
+}
+
+.drawer {
+  position: relative;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--qw-tint);
+  border-top: 1px solid var(--qw-border);
+  padding: 18px;
+}
+
+.drawerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.drawerTitle {
+  font-size: var(--qw-body-size);
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+.drawerClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: -10px -10px -10px 0;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--qw-green);
+}
+
+.drawerBody {
+  display: block;
+}
+
+.drawerFooter {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.drawerAction {
+  flex: 1;
+}
+
+/* ==========================================================================
+   Desktop
+   ========================================================================== */
+
+@media (min-width: 900px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .rail {
+    display: block;
+  }
+
+  /* The drawer and its trigger exist only below the breakpoint. */
+  .mobileBar,
+  .drawerRoot {
+    display: none;
+  }
+
+  .chip {
+    min-height: 0;
+    padding: 9px 12px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-top: 22px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .cardName {
+    margin-top: 16px;
+  }
+
+  .cardMeta,
+  .cardBlurb,
+  .count,
+  .sorted,
+  .profileLink {
+    font-size: var(--qw-small);
+  }
+
+  .cardBlurb {
+    font-size: 15px;
+  }
+
+  .tierChip {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}

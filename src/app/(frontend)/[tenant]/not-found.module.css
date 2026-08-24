@@ -1,0 +1,64 @@
+.wrap {
+  background: var(--qw-ice);
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  padding: var(--qw-section) var(--qw-gutter);
+}
+
+.shell {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*
+ * Deliberately oversized. A reviewer should never have to wonder whether they
+ * hit a bug — the answer is legible from across the room.
+ */
+.shout {
+  font-size: 40px;
+  line-height: 1.04;
+  letter-spacing: -1.2px;
+  font-weight: 700;
+  color: var(--qw-green);
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+@media (min-width: 900px) {
+  .shout {
+    font-size: 82px;
+    letter-spacing: -2.6px;
+  }
+}
+
+.lead {
+  margin: 22px auto 0;
+  max-width: 56ch;
+  font-size: var(--qw-lead);
+  line-height: var(--qw-lead-lh);
+  color: var(--qw-on-ice);
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 34px;
+  padding: 17px 26px;
+  min-height: 44px;
+  border-radius: 2px;
+  background: var(--qw-neon);
+  color: var(--qw-green-deep);
+  font-size: var(--qw-button);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background-color 0.15s ease;
+}
+
+.backButton:hover {
+  background: #00e600;
+}

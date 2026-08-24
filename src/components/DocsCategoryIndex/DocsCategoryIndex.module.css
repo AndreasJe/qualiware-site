@@ -1,0 +1,155 @@
+.layout {
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.sidebar {
+  display: none;
+  background: var(--qw-ground);
+  border-right: 1px solid var(--qw-border);
+  padding: 26px 20px 60px;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+@media (min-width: 900px) {
+  .sidebar {
+    display: block;
+  }
+}
+
+.content {
+  padding: var(--qw-section) var(--qw-gutter);
+  min-width: 0;
+  max-width: 860px;
+}
+
+.breadcrumbs {
+  font-size: var(--qw-small);
+  color: var(--qw-meta);
+  margin-bottom: 18px;
+}
+
+.breadcrumbs a {
+  color: var(--qw-meta);
+  transition: color 0.15s ease;
+}
+
+.breadcrumbs a:hover {
+  color: var(--qw-green);
+}
+
+.crumbSeparator {
+  margin: 0 8px;
+  color: var(--qw-slot-border);
+}
+
+.title {
+  color: var(--qw-heading);
+}
+
+.count {
+  margin-top: 10px;
+  font-size: var(--qw-small);
+  color: var(--qw-meta);
+}
+
+.section {
+  margin-top: 40px;
+}
+
+.sectionTitle {
+  color: var(--qw-green);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--qw-ice);
+}
+
+.childGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+@media (min-width: 900px) {
+  .childGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}
+
+.childCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 20px;
+  min-height: 44px;
+}
+
+.childTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+.childCount {
+  font-size: var(--qw-small);
+  color: var(--qw-meta);
+  flex-shrink: 0;
+}
+
+.articleList {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.articleLink {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 16px 0;
+  min-height: 44px;
+  border-bottom: 1px solid var(--qw-divider);
+}
+
+.articleLink svg {
+  margin-top: 0.45em;
+}
+
+.articleTitle {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--qw-heading);
+  transition: color 0.15s ease;
+}
+
+.articleLink:hover .articleTitle {
+  color: var(--qw-green);
+}
+
+.articleExcerpt {
+  display: block;
+  font-size: var(--qw-small);
+  line-height: 1.6;
+  color: var(--qw-meta);
+  margin-top: 4px;
+}
+
+.empty {
+  margin-top: 30px;
+  font-size: var(--qw-body-size);
+  color: var(--qw-meta);
+}

@@ -1,0 +1,108 @@
+/* Case-study card row — homepage 1a section 8.
+   Element-qualified selectors (a.card, h3.title) are used where a global
+   `.qw-*` utility sets the same property, so the block wins regardless of
+   stylesheet order. */
+
+.section {
+  padding: var(--qw-section) var(--qw-gutter);
+  background: var(--qw-white);
+}
+
+.heading {
+  color: var(--qw-green);
+  margin: 0 0 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .heading {
+    margin-bottom: 34px;
+  }
+}
+
+.item {
+  display: flex;
+}
+
+/* Mobile shows two cards only (handoff: "shows 2 case-study cards"). */
+.itemExtra {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .itemExtra {
+    display: flex;
+  }
+}
+
+/* Border + hover come from the global .qw-card; the card itself is flush so
+   the image can bleed to the edge. */
+a.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}
+
+div.image,
+img.image {
+  width: 100%;
+  height: 170px;
+  min-height: 0;
+  border: 0;
+  border-bottom: 1px dashed var(--qw-slot-border);
+}
+
+@media (min-width: 900px) {
+  div.image,
+  img.image {
+    height: 180px;
+  }
+}
+
+.body {
+  padding: 20px;
+}
+
+@media (min-width: 900px) {
+  .body {
+    padding: 22px;
+  }
+}
+
+.category {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--qw-meta);
+}
+
+h3.title {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--qw-green);
+}
+
+@media (min-width: 900px) {
+  h3.title {
+    font-size: 20px;
+  }
+}
+
+.summary {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--qw-body);
+}

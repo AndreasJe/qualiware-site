@@ -1,0 +1,473 @@
+/* ==========================================================================
+   Archetype strip — the band that makes the page type legible at a glance.
+   Each archetype gets its own ground colour.
+   ========================================================================== */
+
+.archetypeStrip {
+  border-bottom: 1px solid var(--qw-border);
+  background: var(--qw-tint);
+}
+
+.archetypeStrip[data-archetype='platformCapability'] {
+  background: var(--qw-green-deep);
+  border-bottom-color: var(--qw-green-deep);
+}
+
+.archetypeStrip[data-archetype='solutionDiscipline'] {
+  background: var(--qw-ice);
+  border-bottom-color: var(--qw-ice);
+}
+
+.archetypeStrip[data-archetype='solutionIndustry'] {
+  background: var(--qw-tint);
+}
+
+.archetypeStrip[data-archetype='solutionRegulation'] {
+  background: var(--qw-navy);
+  border-bottom-color: var(--qw-navy);
+}
+
+.archetypeStripInner {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 11px var(--qw-gutter);
+  min-height: 44px;
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .archetypeStripInner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 52px;
+  }
+}
+
+.archetypeLabel {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--qw-green);
+}
+
+.archetypeStrip[data-archetype='platformCapability'] .archetypeLabel,
+.archetypeStrip[data-archetype='solutionRegulation'] .archetypeLabel {
+  color: var(--qw-neon);
+}
+
+.archetypeStrip[data-archetype='solutionDiscipline'] .archetypeLabel {
+  color: var(--qw-green);
+}
+
+.archetypeAside {
+  font-size: 13px;
+  color: var(--qw-meta);
+}
+
+.archetypeStrip[data-archetype='platformCapability'] .archetypeAside,
+.archetypeStrip[data-archetype='solutionRegulation'] .archetypeAside {
+  color: var(--qw-ice);
+}
+
+.archetypeStrip[data-archetype='solutionDiscipline'] .archetypeAside {
+  color: var(--qw-on-ice);
+}
+
+.archetypeLink {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: inherit;
+}
+
+/* ==========================================================================
+   E-E-A-T byline
+   ========================================================================== */
+
+.bylineSection {
+  background: var(--qw-tint);
+  border-top: 1px solid var(--qw-border);
+}
+
+.byline {
+  border-left: 3px solid var(--qw-green);
+  padding-left: 18px;
+}
+
+.bylineRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .bylineRow {
+    flex-direction: row;
+    gap: 44px;
+    flex-wrap: wrap;
+  }
+}
+
+.bylineItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.bylineLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--qw-meta);
+}
+
+.bylineName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--qw-heading);
+}
+
+.bylineRole {
+  font-size: var(--qw-small);
+  color: var(--qw-body);
+}
+
+.bylineCredentials {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--qw-meta);
+}
+
+.experienceNote {
+  margin-top: 16px;
+  font-size: var(--qw-small);
+  line-height: 1.65;
+  color: var(--qw-body);
+  max-width: 70ch;
+}
+
+/* ==========================================================================
+   Sources & references
+   ========================================================================== */
+
+.sourcesSection {
+  background: var(--qw-white);
+  border-top: 1px solid var(--qw-border);
+}
+
+.sourcesHeading {
+  color: var(--qw-green);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--qw-ice);
+}
+
+.sourcesList {
+  margin-top: 18px;
+  list-style: decimal;
+  padding-left: 20px;
+  max-width: 80ch;
+}
+
+.source {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--qw-divider);
+}
+
+.sourceLabel {
+  display: block;
+  font-size: var(--qw-small);
+  color: var(--qw-heading);
+}
+
+.sourceLink {
+  color: var(--qw-green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.sourceMeta {
+  display: block;
+  font-size: 13px;
+  color: var(--qw-meta);
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   Regulation facts — the identifying element of a regulation page
+   ========================================================================== */
+
+.regSection {
+  background: var(--qw-white);
+}
+
+.regHeading {
+  color: var(--qw-green);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--qw-ice);
+}
+
+.factGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 20px 0 0;
+}
+
+@media (min-width: 900px) {
+  .factGrid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 44px;
+  }
+}
+
+.fact {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--qw-divider);
+}
+
+.factTerm {
+  font-size: var(--qw-small);
+  color: var(--qw-meta);
+  flex-shrink: 0;
+}
+
+.factValue {
+  margin: 0;
+  font-size: var(--qw-small);
+  font-weight: 700;
+  color: var(--qw-green);
+  text-align: right;
+}
+
+.reqWrap {
+  margin-top: 40px;
+}
+
+.reqHeading {
+  color: var(--qw-heading);
+  margin-bottom: 18px;
+}
+
+/* Desktop table / mobile cards — never a squeezed table. */
+.reqTable {
+  display: none;
+}
+
+.reqCards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (min-width: 900px) {
+  .reqTable {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  .reqCards {
+    display: none;
+  }
+}
+
+.reqTable thead th {
+  background: var(--qw-green);
+  color: var(--qw-white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 13px 16px;
+}
+
+.reqTable tbody th,
+.reqTable tbody td {
+  border-bottom: 1px solid var(--qw-border);
+  padding: 15px 16px;
+  font-size: var(--qw-small);
+  line-height: 1.6;
+  text-align: left;
+  vertical-align: top;
+}
+
+.reqTable tbody th {
+  font-weight: 700;
+  color: var(--qw-heading);
+  width: 30%;
+}
+
+.reqTable tbody td {
+  color: var(--qw-body);
+  font-weight: 400;
+}
+
+.reqArticle {
+  width: 18%;
+  font-family: 'Consolas', 'SFMono-Regular', 'Menlo', monospace;
+  font-size: 13px;
+  color: var(--qw-meta);
+}
+
+.reqCard {
+  border: 1px solid var(--qw-border);
+  border-top: 3px solid var(--qw-green);
+  padding: 18px;
+}
+
+.reqCardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--qw-heading);
+}
+
+.reqCardBody {
+  margin-top: 8px;
+  font-size: var(--qw-small);
+  line-height: 1.65;
+  color: var(--qw-body);
+}
+
+.reqCardArticle {
+  margin-top: 10px;
+  font-family: 'Consolas', 'SFMono-Regular', 'Menlo', monospace;
+  font-size: 12px;
+  color: var(--qw-meta);
+}
+
+/* ==========================================================================
+   Related platform capabilities (Solutions -> Platform hand-down)
+   ========================================================================== */
+
+.capabilities {
+  background: var(--qw-tint);
+}
+
+.capabilitiesHeading {
+  color: var(--qw-green);
+}
+
+.capabilitiesLead {
+  margin-top: 10px;
+  font-size: var(--qw-small);
+  color: var(--qw-body);
+  max-width: 70ch;
+}
+
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+@media (min-width: 900px) {
+  .capabilityGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}
+
+.capabilityCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  min-height: 44px;
+}
+
+.capabilityTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+/* ==========================================================================
+   Legal archetype — a document, not a landing page
+   ========================================================================== */
+
+.legal {
+  background: var(--qw-white);
+}
+
+.legalInner {
+  padding-top: 30px;
+}
+
+.legalShell {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.legalEyebrow {
+  color: var(--qw-meta);
+}
+
+.legalTitle {
+  color: var(--qw-heading);
+  margin: 10px 0 24px;
+}
+
+/* ---------- Author identity ---------- */
+
+.person {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.personText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+/* Square, like everything else — the only 50% radius is a status dot. */
+.avatar {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  background: var(--qw-ice);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarInitials {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--qw-green);
+}
+
+.bylineLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--qw-slot-border);
+  transition: text-decoration-color 0.15s ease;
+}
+
+.bylineLink:hover {
+  text-decoration-color: var(--qw-green);
+}

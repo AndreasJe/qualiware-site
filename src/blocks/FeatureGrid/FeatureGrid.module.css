@@ -1,0 +1,66 @@
+.section {
+  background: var(--qw-white);
+  padding: var(--qw-section) var(--qw-gutter);
+}
+
+.head {
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: var(--qw-green);
+}
+
+.heading {
+  margin: 12px 0 0;
+  color: var(--qw-green);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+    margin-top: 46px;
+  }
+}
+
+/* Border, padding and the 3px green top rule all come from the global
+   `.qw-card` + `.qw-card--feature` pair; only the internal stack is local. */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardTitle {
+  color: var(--qw-green);
+}
+
+.cardText {
+  font-size: var(--qw-body-size);
+  line-height: 1.6;
+  color: var(--qw-body);
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  min-height: 44px;
+  font-size: var(--qw-small);
+  font-weight: 700;
+  color: var(--qw-green);
+}
+
+.cardLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

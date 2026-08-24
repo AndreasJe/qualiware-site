@@ -1,0 +1,72 @@
+.featured {
+  background: var(--qw-white);
+}
+
+.featuredHeading {
+  color: var(--qw-green);
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-top: 26px;
+}
+
+@media (min-width: 900px) {
+  .featuredGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+  }
+}
+
+.featuredCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.featuredTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.featuredLogo {
+  width: 120px;
+  height: 44px;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.tierChip {
+  background: var(--qw-ice);
+  color: var(--qw-green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  flex-shrink: 0;
+}
+
+.featuredName {
+  color: var(--qw-heading);
+}
+
+.featuredBlurb {
+  font-size: var(--qw-small);
+  line-height: 1.65;
+  color: var(--qw-body);
+}
+
+.featuredLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--qw-green);
+}
